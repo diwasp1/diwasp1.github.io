@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dibas</title>
+
+    <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"
+    /> -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha512-rO2SXEKBSICa/AfyhEK5ZqWFCOok1rcgPYfGOqtX35OyiraBg6Xa4NnBJwXgpIRoXeWjcAmcQniMhp22htDc6g=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <nav>
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" class="logo">
+              <div class="image-container">
+                <img
+                  class="img-fluid"
+                  src="assets/images/IMG_4803.png"
+                  alt=""
+                />
+              </div>
+              <div class="title">Dibas Paudel</div>
+            </a>
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#services">What I Do</a></li>
+              <li><a href="#resume">Resume</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-github-square"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+              </li>
+            </ul>
+            <div class="bars d-lg-none">
+              <span onclick="openNav()"><i class="fa fa-bars"></i></span>
+            </div>
+            <div class="close-bars">
+              <span onclick="closeNav()"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          > -->
+          <a href="#home" onclick="closeNav()">Home</a>
+          <a href="#about" onclick="closeNav()">About Me</a>
+          <a href="#services" onclick="closeNav()">What I Do</a>
+          <a href="#resume" onclick="closeNav()">Resume</a>
+          <a href="#portfolio" onclick="closeNav()">Portfolio</a>
+          <a href="#contact" onclick="closeNav()">Contact</a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <section id="home">
+          <div class="content">
+            <!-- <div class="header">
+              var obj = { <br />
+              <span>
+                a: helloMyNameIs, <br />
+                b: () => console.log( "<strong>Dibas Paudel</strong>" ), <br />
+                c: function(){ <br />
+                &nbsp; &nbsp; console.log("
+                <strong>A Creative Freelancer & Front End Developer</strong> ")
+                <br />
+                },
+              </span>
+              };
+            </div> -->
+            <div class="leapfrog-assignments">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="background"></div>
+          <!-- <div class="background-gradient"></div> -->
+        </section>
+        <section id="about">
+          <div class="about-header">
+            <div class="header">ABOUT ME</div>
+            <div class="sub-header">
+              Know Me More
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="row about-des-container">
+            <div class="col-lg-7">
+              <div class="about-description">
+                <div class="header">
+                  I'm <span>Dibas Paudel,</span> a Web Developer
+                </div>
+                <div class="para">
+                  My name is Dibas Paudel. I'm a Freelance Full Stack Developer
+                  based in Kathmandu, Nepal, and I'm very passionate and
+                  dedicated to my work .With 2 years experience as a
+                  professional Full Stack Developer, I have acquired the skills
+                  necessary to build great and premium websites. I help you
+                  build brand for your business at an affordable price.
+                </div>
+                <div class="para">
+                  Delivering work within time and budget which meets client’s
+                  requirements is our moto. galley.
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="about-bio">
+                <ul class="bio-list">
+                  <li>
+                    <span>Name: </span>
+                    Dibas Paudel
+                  </li>
+                  <li>
+                    <span>Email: </span>
+                    dibasp21@gmail.com
+                  </li>
+                  <li>
+                    <span>Age: </span>
+                    24
+                  </li>
+                  <li>
+                    <span>From:</span>
+                    Kathmandu, Nepal
+                  </li>
+                </ul>
+                <div class="about-btn">
+                  <a href=""> Download CV </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="services">
+          <div class="services-header">
+            <div class="header">SERVICES</div>
+            <div class="sub-header">
+              What I Do?
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="service-content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="content">
+                  <div class="icon">
+                    <i class="fas fa-pencil-alt"></i>
+                  </div>
+                  <div class="text">
+                    <div class="header">Creative Design</div>
+                    <div class="para">
+                      Lisque persius interesset his et, in quot quidam
+                      persequeris vim, ad mea essent possim iriure.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="content">
+                  <div class="icon">
+                    <i class="fas fa-laptop"></i>
+                  </div>
+                  <di class="text">
+                    <div class="header">User Interface</div>
+                    <div class="para">
+                      Lisque persius interesset his et, in quot quidam
+                      persequeris vim, ad mea essent possim iriure.
+                    </div>
+                  </di>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="content">
+                  <div class="icon">
+                    <i class="far fa-window-restore"></i>
+                  </div>
+                  <di class="text">
+                    <div class="header">User Experience</div>
+                    <div class="para">
+                      Lisque persius interesset his et, in quot quidam
+                      persequeris vim, ad mea essent possim iriure.
+                    </div>
+                  </di>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="content">
+                  <div class="icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <di class="text">
+                    <div class="header">Clean Code</div>
+                    <div class="para">
+                      Lisque persius interesset his et, in quot quidam
+                      persequeris vim, ad mea essent possim iriure.
+                    </div>
+                  </di>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="resume">
+          <div class="resume-header">
+            <div class="header">Summary</div>
+            <div class="sub-header">
+              Resume
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="resume-content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="education">
+                  <div class="header">My Education</div>
+
+                  <div class="edu-container">
+                    <div class="major">Bachelor Degree</div>
+                    <div class="date">2015-2019</div>
+                    <div class="college">Kathmandu Engineering College</div>
+                    <div class="text">
+                      Bachelor Degree in Electronics and Communication
+                      Engineering.
+                    </div>
+                  </div>
+
+                  <div class="edu-container">
+                    <div class="major">Higher Secondary Certificate</div>
+                    <div class="date">2013-2015</div>
+                    <div class="college">Prasadi Academy</div>
+                    <div class="text">Intermediate Certificate in Science.</div>
+                  </div>
+
+                  <div class="edu-container">
+                    <div class="major">School Leaving Certificate</div>
+                    <div class="date">until 2012</div>
+                    <div class="college">V.S Niketan</div>
+                    <div class="text">School Level Education</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="education">
+                  <div class="header">My Experience</div>
+
+                  <div class="edu-container">
+                    <div class="major">Front End Developer</div>
+                    <div class="date">2019-Present</div>
+                    <div class="college">An4Soft</div>
+                    <div class="text">
+                      Working as a FrontEnd Developer and being involve in
+                      different projects.
+                    </div>
+                  </div>
+
+                  <div class="edu-container">
+                    <div class="major">Full Stack Developer</div>
+                    <div class="date">2018-Present</div>
+                    <div class="college">Freelance</div>
+                    <div class="text">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Fugit, saepe est. Voluptatibus quisquam reprehenderit
+                      natus
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="myskill-container">
+            <div class="header">My Skills</div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div>Web Design</div>
+                    <div></div>
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">HTML/CSS</div>
+                    <!-- <div class="percentage"></div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">JavaScript</div>
+                    <!-- <div class="percentage">70%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">React JS</div>
+                    <!-- <div class="percentage">10%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">Bootstrap</div>
+                    <!-- <div class="percentage">80%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">Wordpress</div>
+                    <!-- <div class="percentage">70%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">Sass</div>
+                    <!-- <div class="percentage">70%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">Php</div>
+                    <!-- <div class="percentage">70%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="skill">
+                  <div class="sub-header">
+                    <div class="title">Laravel</div>
+                    <!-- <div class="percentage">70%</div> -->
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cv-btn">
+              <a href="">Download CV</a>
+            </div>
+          </div>
+        </section>
+        <section id="portfolio">
+          <div class="portfolio-header">
+            <div class="header">portfolio</div>
+            <div class="sub-header">
+              my work
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <div class="header">
+              <ul class="port-links">
+                <li>
+                  <a class="link-btn all active" id="all" href=""> All </a>
+                </li>
+                <li>
+                  <a class="link-btn design" id="design" href=""> Design </a>
+                </li>
+                <li>
+                  <a class="link-btn brand" id="brand"> Brand </a>
+                </li>
+                <li>
+                  <a class="link-btn" id="photo"> Photos </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dis-container">
+              <a href="">
+                <div class="discover-content">
+                  <div class="img-container">
+                    <img class="img-fluid" src="assets/images/spa.jpg" alt="" />
+                  </div>
+                  <div class="text">Spa</div>
+                  <div class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente pariatur assumenda nobis voluptatum deserunt sint
+                    error voluptates!
+                  </div>
+                  <div class="overlay-color"></div>
+                </div>
+              </a>
+
+              <a href="">
+                <div class="discover-content">
+                  <div class="img-container">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/swimmingpool.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text">Swimming Pool</div>
+                  <div class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente pariatur assumenda nobis voluptatum deserunt sint
+                    error voluptates!
+                  </div>
+                  <div class="overlay-color"></div>
+                </div>
+              </a>
+
+              <a href="">
+                <div class="discover-content">
+                  <div class="img-container">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/gym1.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text">Indoor Gym</div>
+                  <div class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente pariatur assumenda nobis voluptatum deserunt sint
+                    error voluptates!
+                  </div>
+                  <div class="overlay-color"></div>
+                </div>
+              </a>
+
+              <a href="">
+                <div class="discover-content">
+                  <div class="img-container">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/gym1.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text">Indoor Gym</div>
+                  <div class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente pariatur assumenda nobis voluptatum deserunt sint
+                    error voluptates!
+                  </div>
+                  <div class="overlay-color"></div>
+                </div>
+              </a>
+
+              <a href="">
+                <div class="discover-content">
+                  <div class="img-container">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/gym1.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text">Indoor Gym</div>
+                  <div class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente pariatur assumenda nobis voluptatum deserunt sint
+                    error voluptates!
+                  </div>
+                  <div class="overlay-color"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section id="contact">
+          <div class="contact-header">
+            <div class="header">contact</div>
+            <div class="sub-header">
+              get in touch
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="contact-content">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="address-container">
+                  <div class="header">Address</div>
+                  <div class="para">Koteshwor, Kathmandu, Nepal</div>
+                  <div class="text">
+                    <i class="fas fa-phone"></i> 9861041900
+                  </div>
+                  <div class="text">
+                    <i class="fas fa-envelope"></i> dibasp21@gmail.com
+                  </div>
+                  <div class="follow-links">
+                    <div class="header">Follow Me</div>
+
+                    <div class="social-links">
+                      <ul>
+                        <li>
+                          <a href=""><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fab fa-twitter-square"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fab fa-github-square"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="message-container">
+                  <div class="header">Send us a note</div>
+                  <form action="">
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Name"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="form-group">
+                          <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Email"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <textarea
+                        placeholder="Tell us more about your needs......"
+                        class="form-control"
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="5"
+                      >
+Tell </textarea
+                      >
+                    </div>
+                    <button class="message-btn" type="submit">
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-container">
+          Copyright &copy; 2020 <span>Dibas</span>. All Rights Reserved.
+        </div>
+        <a id="button"><i class="fas fa-chevron-up"></i></a>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

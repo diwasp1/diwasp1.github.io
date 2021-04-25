@@ -1,0 +1,26 @@
+[
+    {
+      "name" : "baked beans",
+      "price" : 0.40,
+      "image" : "beans.jpg",
+      "type" : "vegetables"
+    },
+    {
+      "name" : "hot dogs",
+      "price" : 1.99,
+      "image" : "hotdogs.jpg",
+      "type" : "meat"
+    },
+    {
+      "name" : "spam",
+      "price" : 2.85,
+      "image" : "spam.jpg",
+      "type" : "meat"
+    },
+    {
+      "name" : "refried beans",
+      "price" : 0.99,
+      "image" : "refried.jpg",
+      "type" : "vegetables"
+    }
+]
