@@ -77,8 +77,12 @@ nav {
           a {
             transition: all 0.2s ease;
             color: rgba(250, 250, 250, 0.9);
+            background-color: #20c997;
+            padding: 10px 16px;
+            border-radius: 5px;
           }
           a:hover {
+            background-color: rgba(250, 250, 250, 0.9);
             color: #20c997;
           }
         }
@@ -424,12 +428,12 @@ main {
         border: 1px solid #dee2e6;
         text-align: center;
         padding: 25px 10px;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         .icon {
           display: block;
           text-align: center;
           margin: 10px 0px;
-          
+
           i {
             font-size: 50px;
             color: #c79864;
@@ -886,9 +890,9 @@ footer {
   }
 }
 
-// assignments 
-.leapfrog-assignments{
-  .table{
+// assignments
+.leapfrog-assignments {
+  .table {
     background-color: #ffffff;
   }
 }
