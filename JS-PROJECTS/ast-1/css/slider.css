@@ -23,12 +23,13 @@
   font-size: 30px;
   z-index: 10;
   color: azure;
-  opacity: 0.4;
+  opacity: 0.8;
   padding: 8px;
   transition: opacity 0.25s;
 }
 .arrow:hover {
   opacity: 0.9;
+  color: aqua;
 }
 
 #arrowLeft {
@@ -56,10 +57,11 @@
   border-radius: 50%;
   background-color: azure;
   margin: 0 5px;
-  opacity: 0.4;
+  opacity: 0.8;
   transition: opacity 0.25s;
 }
 .dot:hover,
 .dot.active {
   opacity: 0.9;
+  background-color: aqua;
 }
