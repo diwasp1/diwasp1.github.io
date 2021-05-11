@@ -9,7 +9,7 @@ function Slider(
 
   // Get Dom Elements
   var carouselContainer = document.querySelector(`.${this.carouselClass}`);
-  console.log(carouselContainer)
+  console.log(carouselContainer);
   var carouselImages = carouselContainer.getElementsByTagName("div")[0];
   var images = carouselImages.getElementsByTagName("img");
 
@@ -20,6 +20,7 @@ function Slider(
   var width = carouselContainer.offsetWidth;
   var transitionTime = this.transitionTime;
   var transitionDelay = this.transitionDelay;
+  console.log(transitionDelay);
 
   //   arrow left
   var arrowLeft = document.createElement("div");
@@ -27,14 +28,19 @@ function Slider(
   arrowLeft.classList.add("arrow");
   arrowLeft.setAttribute("id", "arrowLeft");
   carouselContainer.appendChild(arrowLeft);
+  var click = true;
 
   arrowLeft.addEventListener("click", () => {
-    nextIndex = currentIndex - 1;
-    if (nextIndex < 0) {
-      nextIndex = noImage - 1;
+    if (click == true) {
+      click = false;
+      console.log(click);
+      nextIndex = currentIndex - 1;
+      if (nextIndex < 0) {
+        nextIndex = noImage - 1;
+      }
+      clearTimeout(slideAction);
+      slideFunc(nextIndex);
     }
-    // clearTimeout(slideAction);
-    slideFunc(nextIndex);
   });
 
   //   arrow Right
@@ -45,29 +51,33 @@ function Slider(
   carouselContainer.appendChild(arrowRight);
 
   arrowRight.addEventListener("click", () => {
+    if (click == true) {
+      click = false;
+      console.log(click);
+      var nextIndex = currentIndex + 1;
+      if (nextIndex > noImage - 1) {
+        nextIndex = 0;
+      }
+      // if (index == currentIndex) {
+      //   return;
+      // }
+      clearTimeout(slideAction);
+      slideFunc(nextIndex);
+    }
+  });
+
+  var slideAction;
+  continuousSlider();
+
+  function continuousSlider() {
     var nextIndex = currentIndex + 1;
     if (nextIndex > noImage - 1) {
       nextIndex = 0;
     }
-    // if (index == currentIndex) {
-    //   return;
-    // }
-    // clearTimeout(slideAction);
-    slideFunc(nextIndex);
-  });
-
-  var slideAction;
-  // continuousSlider();
-
-  //   function continuousSlider() {
-  //     var nextIndex = currentIndex + 1;
-  //     if (nextIndex > noImage - 1) {
-  //       nextIndex = 0;
-  //     }
-  //     slideAction = setTimeout(() => {
-  //       slideFunc(nextIndex);
-  //     }, 1000);
-  //   }
+    slideAction = setTimeout(() => {
+      slideFunc(nextIndex);
+    }, transitionDelay);
+  }
 
   //dots
   var dotsContainer = document.createElement("div");
@@ -86,12 +96,17 @@ function Slider(
 
   dotsArray.forEach((dot, index) => {
     dot.addEventListener("click", (e) => {
-      //   clearTimeout(slideAction);
-      //   if (index == currentIndex) {
-      //     return;
-      //   }
-
-      slideFunc(index);
+      console.log(click);
+      if (click == true) {
+        click = false;
+        if (index == currentIndex) {
+          click = true;
+          return;
+        }
+        clearTimeout(slideAction);
+        // console.log(index,click, "index");
+        slideFunc(index);
+      }
     });
   });
 
@@ -102,7 +117,7 @@ function Slider(
     var maxOffset = index == 0 ? 0 : -index * width;
     var changeOffset = (maxOffset - currentOffset) / transitionTime;
     var initialOffset;
-    console.log(index, currentOffset, maxOffset, changeOffset, transitionTime);
+    // console.log(index, currentOffset, maxOffset, changeOffset, transitionTime);
 
     var slide = setInterval(() => {
       var currentOffset = carouselImages.offsetLeft;
@@ -110,20 +125,22 @@ function Slider(
       if (currentIndex > index) {
         if (currentOffset + changeOffset * 2 > maxOffset) {
           clearInterval(slide);
-          //   clearTimeout(slideAction);
+          clearTimeout(slideAction);
           currentIndex = index;
-          // continuousSlider();
+          click = true;
+          continuousSlider();
         }
       } else if (currentOffset + changeOffset * 2 < maxOffset) {
         clearInterval(slide);
-        // clearTimeout(slideAction);
+        clearTimeout(slideAction);
         currentIndex = index;
-        // continuousSlider();
+        click = true;
+        continuousSlider();
       }
 
       carouselImages.style.left = currentOffset + changeOffset + "px";
       timer++;
-      console.log(carouselImages.style.left, "timer:", timer);
+      // console.log(carouselImages.style.left, "timer:", timer);
     }, 10);
 
     // dot active
