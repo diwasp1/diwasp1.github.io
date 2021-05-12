@@ -68,9 +68,10 @@ const Ball = function (x, y, radius) {
 // ball instances
 var balls = new Array();
 
-var height = document.documentElement.clientHeight;
-var width = document.documentElement.clientWidth;
-
+// var height = document.documentElement.clientHeight;
+// var width = document.documentElement.clientWidth;
+var height = HEIGHT;
+var width = WIDTH;
 
 var random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -101,8 +102,6 @@ for (var i = 0; i < TOTALBALL; i++) {
 
 // continues loop
 function running() {
-  height = document.documentElement.clientHeight;
-  width = document.documentElement.clientWidth;
   context.canvas.height = height;
   context.canvas.width = width;
 
