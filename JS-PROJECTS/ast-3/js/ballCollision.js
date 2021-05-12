@@ -123,4 +123,6 @@ function running() {
   window.requestAnimationFrame(running);
 }
 
-running();
+window.addEventListener("load", function () {
+  running();
+});
