@@ -42,7 +42,7 @@ function Main() {
     container.appendChild(coverPage);
 
     var gameName = document.createElement("div");
-    gameName.innerText = "CAR LANE GAME";
+    gameName.innerText = "CAR LANE GAME WITH BULLET FIRE";
     gameName.setAttribute("id", "game-name");
     coverPage.appendChild(gameName);
 
