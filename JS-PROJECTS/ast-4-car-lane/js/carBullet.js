@@ -66,6 +66,11 @@ function Main() {
     control2.setAttribute("class", "control");
     gameControls.appendChild(control2);
 
+     var control3 = document.createElement("p");
+     control3.innerText = "Press 'Shift' to fire.";
+     control3.setAttribute("class", "control");
+     gameControls.appendChild(control3);
+
     // game instructions
 
     var gameInstruction = document.createElement("div");
@@ -104,15 +109,6 @@ function Main() {
     this.gameBackground = new GameBackground();
     this.gameCar = new GameCar();
 
-    // function backgroundMotion() {
-    //   that.gameBackground.positionY += 5;
-    //   that.gameBackground.upadteBackgroundPostion();
-    //   window.requestAnimationFrame(backgroundMotion);
-    // }
-    // backgroundMotion();
-    // bulletFire = setInterval(() => {
-    // that.gameCar.bulletCreate();
-    // }, 1000);
 
     this.controls();
     this.movement();
@@ -222,18 +218,14 @@ function Main() {
         that.obstacles[i].x == that.gameCar.x &&
         BULLET_HEIGHT + this.gameCar.bulletPositionY >= that.obstacles[i].y
       ) {
-        // backgroundImage.removeChild(this.obstacles[i]);
         that.obstacles[i].removePosition();
         backgroundImage.removeChild(this.gameCar.bulletElement);
         this.gameCar.bulletCount = 0;
         this.obstacles[i] = null;
-      }
-    }
-
-    for (var j = 0; j < this.obstacles.length; j++) {
-      if (this.obstacles[j] === null) {
-        this.obstacles.splice(this.obstacles.indexOf(this.obstacles[j]), 1);
-        break;
+        if (this.obstacles[i] === null) {
+          this.obstacles.splice(this.obstacles.indexOf(this.obstacles[i]), 1);
+          break;
+        }
       }
     }
   };
