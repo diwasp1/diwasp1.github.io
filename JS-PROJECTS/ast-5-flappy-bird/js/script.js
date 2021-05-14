@@ -10,7 +10,6 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
 //MAIN FUNCTION
 function Main() {
   var that = this;
@@ -152,7 +151,7 @@ function Main() {
   };
 
   this.checkCollision = function () {
-    if (that.bird.positionY >= MAX_HEIGHT - BIRD_HEIGHT) {
+    if (that.bird.positionY >= MAX_HEIGHT - BIRD_HEIGHT - 3) {
       that.gameOver();
     }
   };
