@@ -1,0 +1,179 @@
+/*--------------------------- fonts ---------------------------- */
+@font-face {
+  font-family: "Flappy Bird";
+  src: url("/fonts/Flappy_Bird/Flappy-Bird.ttf");
+}
+@font-face {
+  font-family: "Botsmatic";
+  src: url("/fonts/botsmatic-font/BotsmaticOutline-anZg.ttf");
+}
+/*--------------------------- gamecover ---------------------------- */
+
+#game-cover {
+  text-align: center;
+  border-radius: 20px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+
+#game-name {
+  font-family: "Flappy Bird";
+  color: #262120;
+  font-size: 90px;
+  padding: 120px 0px 100px 0px;
+  letter-spacing: 3px;
+}
+
+#game-controls {
+  color: white;
+  font-family: "Botsmatic";
+  letter-spacing: 2px;
+  margin: 60px 0px;
+}
+#banner-score {
+  color: #262120;
+  font-family: "Flappy Bird";
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+/* start button  */
+
+#start-button {
+  font-family: "Flappy Bird";
+  font-size: 40px;
+  padding: 2px 40px;
+  outline: none;
+  color: white;
+  background-color: #e86101;
+  border: 4px solid #543000;
+  letter-spacing: 2px;
+}
+
+#start-button:hover {
+  color: #e86101;
+  background-color: white;
+}
+
+/*--------------------------- background ---------------------------- */
+
+#background-image {
+  position: relative;
+  width: 500px;
+  height: 695px;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#footer-image {
+  position: absolute;
+  width: 100%;
+  height: 118px;
+  left: 0;
+  bottom: 0px;
+  z-index: 10;
+}
+
+#score {
+  font-family: "Flappy Bird";
+  font-size: 100px;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  color: #262120;
+  z-index: 20;
+}
+
+/*--------------------------- bird ---------------------------- */
+
+#bird {
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  left: 180px;
+  top: 270px;
+}
+
+/*--------------------------- obstacle ---------------------------- */
+
+.obstacle-top,
+.obstacle-bottom {
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+.obstacle-top {
+  transform: rotate(180deg);
+}
+
+/*--------------------------- Game Over ---------------------------- */
+#gameover {
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  top: 26%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  z-index: 20;
+  text-align: center;
+}
+
+#gameover-alert {
+  font-family: "Flappy Bird";
+  color: #dd881c;
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+#gameover-text {
+  font-family: "Flappy Bird";
+  margin: 0 100px;
+  background-color: #ded895;
+  border: 4px solid #543000;
+  color: #262120;
+  padding: 8px;
+  letter-spacing: 3px;
+  border-radius: 2px;
+  padding: 0 30px;
+  border-radius: 10px;
+}
+#gameover-score,
+#gameover-high-score {
+  font-size: 40px;
+  margin: 0 20px;
+  line-height: 0.9;
+}
+
+#gameover-button {
+  margin-top: 20px;
+}
+
+#gameover-reset,
+#gameover-play-again {
+  font-family: "Flappy Bird";
+  font-size: 30px;
+  padding: 2px 12px;
+  outline: none;
+  color: white;
+  background-color: #e86101;
+  border: 4px solid #543000;
+  letter-spacing: 2px;
+  margin: 0px 5px;
+}
+
+#gameover-reset:hover,
+#gameover-play-again:hover {
+  color: #e86101;
+  background-color: white;
+}
+
+#score-information {
+  color: #262120;
+  font-family: "Botsmatic";
+  letter-spacing: 2px;
+  margin-top: 30px;
+}

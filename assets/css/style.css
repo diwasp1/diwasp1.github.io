@@ -268,7 +268,6 @@ main #home {
 }
 
 main #home .content {
-  height: 100vh;
   color: #fff;
   text-align: center;
   position: relative;
@@ -287,6 +286,7 @@ main #home .content {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0px 48px;
+  padding-top: 20px;
 }
 
 main #home .content .header {
@@ -322,7 +322,7 @@ main #home .background-gradient {
 main #home .background {
   background-image: url("../images/codebg.jpg");
   position: absolute;
-  height: 100%;
+  height: 1200px;
   top: 0;
   left: 0;
   width: 100%;
