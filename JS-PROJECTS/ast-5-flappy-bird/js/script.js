@@ -134,7 +134,6 @@ function Main() {
       if (e.keyCode === 32) {
         if (that.gameOverState == false) {
           that.jump();
-          FLY_S.play();
         }
       }
     };
