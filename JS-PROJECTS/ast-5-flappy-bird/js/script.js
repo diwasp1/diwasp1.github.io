@@ -10,6 +10,7 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+
 //MAIN FUNCTION
 function Main() {
   var that = this;
@@ -133,6 +134,7 @@ function Main() {
       if (e.keyCode === 32) {
         if (that.gameOverState == false) {
           that.jump();
+          FLY_S.play();
         }
       }
     };
