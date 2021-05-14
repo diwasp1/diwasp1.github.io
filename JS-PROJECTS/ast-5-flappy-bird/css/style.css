@@ -1,11 +1,11 @@
 /*--------------------------- fonts ---------------------------- */
 @font-face {
   font-family: "Flappy Bird";
-  src: url("/fonts/Flappy_Bird/Flappy-Bird.ttf");
+  src: url("../fonts/Flappy_Bird/Flappy-Bird.ttf");
 }
 @font-face {
   font-family: "Botsmatic";
-  src: url("/fonts/botsmatic-font/BotsmaticOutline-anZg.ttf");
+  src: url("../fonts/botsmatic-font/BotsmaticOutline-anZg.ttf");
 }
 /*--------------------------- gamecover ---------------------------- */
 
