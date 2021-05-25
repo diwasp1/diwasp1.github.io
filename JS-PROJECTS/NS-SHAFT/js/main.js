@@ -8,7 +8,6 @@ canvas.height = CANVAS_HEIGTH;
 
 // LOAD IMAGE
 
-
 // CREATE PLATFORMS
 
 class Platform {
@@ -311,25 +310,20 @@ function platformEffect(platform) {
   if (platform.type == "conveyorRight") {
     if (player.x < canvas.width - player.width - WALL_WIDTH) {
       player.x += 2;
-      player.gravitySpeed = 0;
     }
   } else if (platform.type == "conveyorLeft") {
     if (player.x > WALL_WIDTH) {
       player.x -= 2;
-      player.gravitySpeed = 0;
     }
   } else if (platform.type == "trampoline") {
-    player.gravitySpeed = 0;
-
-    player.y -= 80;
+      player.y -= 60;
+    
   } else if (platform.type == "spike") {
     player.life -= 3;
-    player.gravitySpeed = 0;
   } else if (platform.type == "shaft") {
-    player.gravitySpeed = 0;
   } else if (platform.type == "fake") {
-    player.gravitySpeed = 0;
   }
+  player.gravitySpeed = 0;
 }
 
 // LIFE UPDATE
@@ -500,6 +494,7 @@ function animate() {
     if (checkGameOver) {
       gameOver();
     }
+    console.log(player.gravitySpeed);
 
     boundries.draw();
     frame++;
@@ -508,6 +503,7 @@ function animate() {
 
     if (frame % 600 === 0 && gameSpeed < 3) {
       gameSpeed += 0.2;
+      platformFrame -= 3;
     }
   } else {
     return;
