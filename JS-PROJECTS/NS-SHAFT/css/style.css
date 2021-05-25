@@ -48,6 +48,7 @@
   border: 1px solid #9b2c23;
   height: 22px;
   width: 102px;
+  border-radius: 5px;
 }
 
 #lifeValue .life {
@@ -56,6 +57,7 @@
   height: 20px;
   width: 10px;
   border: 1px solid #9b2c23;
+  border-radius: 5px;
 }
 
 #scoreValue {
@@ -102,12 +104,12 @@
   border: 2px solid #757575;
 }
 .pause-container .game-pause {
-  background-image: url("../assets/images/play.png");
+  background-image: url("../assets/images/pause.png");
   width: 32px;
   height: 32px;
 }
 .pause-container .active {
-  background-image: url("../assets/images/pause.png");
+  background-image: url("../assets/images/play.png");
   width: 32px;
   height: 32px;
 }
