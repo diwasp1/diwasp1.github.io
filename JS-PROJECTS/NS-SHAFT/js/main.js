@@ -48,8 +48,8 @@ function init() {
   life = 10;
   gameScore = 0;
   lastCollisionFrame = 0;
-  highScore = localStorage.getItem("highscore")
-    ? localStorage.getItem("highscore")
+  highScore = localStorage.getItem("nsshaft-highscore")
+    ? localStorage.getItem("nsshaft-highscore")
     : 0;
   newHighScore = 0;
   gameSpeed = 1.5;
@@ -329,7 +329,7 @@ function updateRecord() {
 }
 
 function updateHighScore(newScore) {
-  localStorage.setItem("highscore", newScore);
+  localStorage.setItem("nsshaft-highscore", newScore);
   highScore = newScore;
 }
 
@@ -419,7 +419,7 @@ function gameOverBackground() {
     scoreboard.style.display = "none";
     col1.style.display = "none";
     col2.style.display = "none";
-    updateHighScore(0);
+    // updateHighScore(0);
     menuSound.pause();
   });
 
