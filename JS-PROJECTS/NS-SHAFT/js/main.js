@@ -383,7 +383,7 @@ function gameOver() {
   }
 
   cancelAnimationFrame(animationId);
-  console.log("gameover");
+  // console.log("gameover");
 
   if (highScore < gameScore) {
     newHighScore = 1;
@@ -493,7 +493,6 @@ function animate() {
     if (checkGameOver) {
       gameOver();
     }
-    console.log(player.gravitySpeed);
 
     boundries.draw();
     frame++;
