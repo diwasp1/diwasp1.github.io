@@ -7,7 +7,7 @@ canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGTH;
 
 // LOAD IMAGE
-const platformSprite = new Image();
+
 
 // CREATE PLATFORMS
 
@@ -27,6 +27,7 @@ class Platform {
   }
 
   draw() {
+    const platformSprite = new Image();
     platformSprite.src = this.src;
     ctx.drawImage(
       platformSprite,
