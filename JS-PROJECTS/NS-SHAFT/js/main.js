@@ -6,7 +6,6 @@ const ctx = canvas.getContext("2d");
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGTH;
 
-
 // VARIABLES
 let animationId;
 let background;
@@ -15,6 +14,7 @@ let keys = [];
 let collide;
 let checkGameOver;
 let platforms;
+let platform;
 let frame;
 let life;
 let gameScore;
@@ -94,9 +94,8 @@ function movePlayer() {
 function generatePlatforms() {
   if (frame % platformFrame === 0) {
     let x = Math.random() * 320;
-    let y = CANVAS_HEIGTH - 50;
+    let y = CANVAS_HEIGTH;
     let random = Math.random() * 100;
-    let platform;
     platformCount += 1;
     if (random < 40) {
       platform = new Platform(
