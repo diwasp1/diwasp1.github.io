@@ -6,46 +6,6 @@ const ctx = canvas.getContext("2d");
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGTH;
 
-// LOAD IMAGE
-
-// CREATE PLATFORMS
-
-// class Platform {
-//   constructor(type, src, x, y, width, height, frameX, frameY, id) {
-//     this.type = type;
-//     this.src = src;
-//     this.x = x;
-//     this.y = y;
-//     this.width = width;
-//     this.height = height;
-//     this.frameX = frameX;
-//     this.frameY = frameY;
-//     this.speed = 1.5;
-//     this.counted = false;
-//     this.id = id;
-//   }
-
-//   draw() {
-//     const platformSprite = new Image();
-//     platformSprite.src = this.src;
-//     ctx.drawImage(
-//       platformSprite,
-//       this.width * this.frameX,
-//       this.height * this.frameY,
-//       this.width,
-//       this.height,
-//       this.x,
-//       this.y,
-//       this.width,
-//       this.height
-//     );
-//   }
-//   update() {
-//     this.draw();
-//     this.speed = gameSpeed;
-//     this.y -= this.speed;
-//   }
-// }
 
 // VARIABLES
 let animationId;
@@ -441,12 +401,12 @@ function gameOverBackground() {
   scoreInformation.setAttribute("id", "score-information");
 
   if (newHighScore) {
-    scoreInformation.innerText = "new high score recorded";
+    scoreInformation.innerText = "Congratulations new high score recorded";
   } else if (highScore > gameScore) {
-    scoreInformation.innerText = "try again";
+    scoreInformation.innerText = "Try again";
   } else if (highScore == gameScore) {
     if (!newHighScore && highScore != 0) {
-      scoreInformation.innerText = "don't give up almost there";
+      scoreInformation.innerText = "Don't give up almost there";
     }
   }
 
