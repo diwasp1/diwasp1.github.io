@@ -94,7 +94,7 @@ function init() {
     : 0;
   newHighScore = 0;
   gameSpeed = 1.5;
-  platformFrame = 80;
+  platformFrame = 70;
 
   // KEYS CONTROLS
   addEventListener("keydown", (e) => {
@@ -139,7 +139,7 @@ function generatePlatforms() {
     let random = Math.random() * 100;
     let platform;
     platformCount += 1;
-    if (random < 20) {
+    if (random < 40) {
       platform = new Platform(
         "shaft",
         "./assets/images/shaft.png",
@@ -151,7 +151,7 @@ function generatePlatforms() {
         0,
         platformCount
       );
-    } else if (random < 40) {
+    } else if (random < 50) {
       platform = new Platform(
         "spike",
         "./assets/images/spiking.png",
@@ -163,7 +163,7 @@ function generatePlatforms() {
         0,
         platformCount
       );
-    } else if (random < 50) {
+    } else if (random < 60) {
       platform = new Platform(
         "conveyorLeft",
         "./assets/images/conveyor_left.png",
@@ -175,7 +175,7 @@ function generatePlatforms() {
         0,
         platformCount
       );
-    } else if (random < 60) {
+    } else if (random < 70) {
       platform = new Platform(
         "conveyorRight",
         "./assets/images/conveyor_right.png",
