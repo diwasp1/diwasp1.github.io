@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NSShaft</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <div class="col-1">
+        <div id="scoreboard">
+          <div id="lifeContainer">
+            <div id="lifeText">Life</div>
+            <div id="lifeValue"></div>
+          </div>
+          <div id="scoreValue"></div>
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="col-2">
+        <div class="game-name">
+          <h1>NS-SHAFT</h1>
+          <p>DIBAS PAUDEL - SE28</p>
+        </div>
+        <div class="record">
+          <h2>RECORD:</h2>
+          <p id="recordValue"></p>
+        </div>
+
+        <div class="bottom-buttons">
+          <div class="pause-container">
+            <div class="game-pause active" id="game-pause"></div>
+          </div>
+          <div class="sound-buttons">
+            <div id="game-sound" class="sound active"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="startgame">
+        <div class="gameCoverContent">
+          <figure class="gameLogo">
+            <img src="assets/images/title.png" alt="" />
+          </figure>
+          <div class="name">
+            <p>&copy; DIBAS PAUDEL SE28</p>
+            <p>Ver 1.0</p>
+          </div>
+
+          <button class="cover-button" id="startButton">New Game</button>
+          <div class="instruction-sound-btn">
+            <button class="cover-button" id="instructionsButton">
+              Instructions
+            </button>
+            <div class="sound-buttons">
+              <div id="sound" class="sound active"></div>
+            </div>
+          </div>
+
+          <div class="game-instructions-container">
+            <div class="close-button-wrapper">
+              <a href="javascript:void(0)" id="close-button">X</a>
+            </div>
+            <h3>How to play</h3>
+            <ul>
+              <li class="instructions">
+                Move the character with arrow keys and dive deeper into the
+                cave.
+              </li>
+              <li class="instructions">
+                You will die if you fall all the way to the bottom or run out of
+                the "life".
+              </li>
+              <li class="instructions">
+                "Life" is displayed on the upper left corner of the screen.
+              </li>
+              <li class="instructions">
+                "Life" decreases when you touch the pillards, but you can
+                recover the "life" guage by landing on the normal floor.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/constants.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/boundries.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/platform.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

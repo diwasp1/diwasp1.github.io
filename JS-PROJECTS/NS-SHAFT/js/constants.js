@@ -1,0 +1,7 @@
+// CONSTANTS
+const CANVAS_WIDTH = 400;
+const CANVAS_HEIGTH = 600;
+const PLAYER_WIDTH = 32;
+const PLAYER_HEIGHT = 32;
+const WALL_WIDTH = 16;
+const CEILING_HEIGHT = 16;
