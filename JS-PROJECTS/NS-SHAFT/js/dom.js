@@ -35,6 +35,9 @@ dieSound.volume = 0.3;
 const menuSound = document.createElement("audio");
 menuSound.src = "./assets/sounds/menu_music.wav";
 menuSound.volume = 0.3;
+hitSound.load();
+backgroundSound.load();
+dieSound.load();
 
 startButton.addEventListener("click", (e) => {
   init();
