@@ -316,8 +316,7 @@ function platformEffect(platform) {
       player.x -= 2;
     }
   } else if (platform.type == "trampoline") {
-      player.y -= 60;
-    
+    player.y -= 60;
   } else if (platform.type == "spike") {
     player.life -= 3;
   } else if (platform.type == "shaft") {
@@ -358,14 +357,14 @@ function decreaseLife() {
 
 // UPADTE SCORE
 function updateScore() {
-  scoreValue.innerText = gameScore.toString(16);
+  scoreValue.innerText = gameScore;
 }
 
 function updateRecord() {
   if (gameScore > highScore) {
-    recordValue.innerText = gameScore.toString(16);
+    recordValue.innerText = gameScore;
   } else {
-    recordValue.innerText = highScore.toString(16);
+    recordValue.innerText = highScore;
   }
 }
 
@@ -415,12 +414,12 @@ function gameOverBackground() {
 
   var gameOverScore = document.createElement("div");
   gameOverScore.setAttribute("id", "gameover-score");
-  gameOverScore.innerText = `SCORE ${gameScore.toString(16)}`;
+  gameOverScore.innerText = `SCORE ${gameScore}`;
   gameOverText.appendChild(gameOverScore);
 
   var gameOverHighScore = document.createElement("div");
   gameOverHighScore.setAttribute("id", "gameover-high-score");
-  gameOverHighScore.innerText = `RECORD ${highScore.toString(16)} `;
+  gameOverHighScore.innerText = `RECORD ${highScore} `;
   gameOverText.appendChild(gameOverHighScore);
 
   //play again
