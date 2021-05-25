@@ -338,7 +338,7 @@ function updateHighScore(newScore) {
   highScore = newScore;
 }
 
-// GAMEOVER 
+// GAMEOVER
 function gameOver() {
   if (sound) {
     dieSound.play();
@@ -422,6 +422,8 @@ function gameOverBackground() {
     gameOverElement.style.display = "none";
     startgame.style.display = "flex";
     scoreboard.style.display = "none";
+    col1.style.display = "none";
+    col2.style.display = "none";
     updateHighScore(0);
     menuSound.pause();
   });

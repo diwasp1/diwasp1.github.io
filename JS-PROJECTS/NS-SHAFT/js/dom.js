@@ -17,6 +17,9 @@ const instructionsButton = document.getElementById("instructionsButton");
 const closeButton = document.getElementById("close-button");
 const gameInstruction = document.querySelector(".game-instructions-container");
 
+const col1 = document.getElementById("col-1");
+const col2 = document.getElementById("col-2");
+
 // SOUND
 const hitSound = document.createElement("audio");
 hitSound.src = "./assets/sounds/hit.wav";
@@ -38,6 +41,8 @@ startButton.addEventListener("click", (e) => {
   animate();
   startgame.style.display = "none";
   scoreboard.style.display = "flex";
+  col1.style.display = "block";
+  col2.style.display = "block";
 });
 
 instructionsButton.addEventListener("click", () => {

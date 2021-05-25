@@ -111,6 +111,10 @@
   height: 32px;
 }
 
+#col-1,
+#col-2 {
+  display: none;
+}
 /*--------------------------- Start Game ---------------------------- */
 
 #startgame {
@@ -179,7 +183,7 @@
 .game-instructions-container h3 {
   margin-bottom: 5px;
 }
-.instructions{
+.instructions {
   margin-bottom: 5px;
 }
 .instructions::before {
