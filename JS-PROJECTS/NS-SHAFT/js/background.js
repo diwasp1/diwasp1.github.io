@@ -1,6 +1,6 @@
 // LOAD IMAGE
 const backgroundImage = new Image();
-backgroundImage.src = "./assets/images/background.jpg";
+backgroundImage.src = "./assets/images/background.png";
 
 // CREATE BACKGROUND
 class Background {
