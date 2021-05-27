@@ -4,6 +4,11 @@
   src: url("../assets/fonts/Roboto/Roboto-BoldItalic.ttf");
 }
 
+body {
+  background: url("../assets/images/background.png");
+  background-repeat: repeat;
+  background-size: cover;
+}
 #game-container {
   /* background: #0d0d0d; */
   height: 700px;
@@ -19,6 +24,8 @@
   background: url("../assets/images/cloud.jpg");
   background-size: cover;
   margin-top: 20px;
+  box-shadow: 0 0 10px 2px;
+  border-radius: 10px;
 }
 
 #canvas {
@@ -26,6 +33,7 @@
   height: 600px;
   border: 4px solid #645a5a;
   background: #0d0d0d;
+  border-radius: 10px;
 }
 
 #scoreboard {
@@ -121,8 +129,6 @@
 /*--------------------------- Start Game ---------------------------- */
 
 #startgame {
-  /* background: #000000; */
-  background: url("../assets/images/cloud.jpg");
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -131,7 +137,9 @@
   justify-content: center;
   left: 0;
   top: 0;
+  background: url("../assets/images/cloud.jpg");
   background-size: cover;
+  border-radius: 10px;
 }
 .cover-button {
   text-transform: uppercase;

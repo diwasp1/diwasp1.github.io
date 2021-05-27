@@ -16,7 +16,7 @@ class Boundries {
     this.x2 = CANVAS_WIDTH - WALL_WIDTH;
     this.width = WALL_WIDTH;
     this.height = CANVAS_HEIGTH;
-    this.speed = 1.5;
+    this.speed = INITIAL_GAME_SPEED;
   }
 
   draw() {

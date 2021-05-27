@@ -10,7 +10,7 @@ class Platform {
     this.height = height;
     this.frameX = frameX;
     this.frameY = frameY;
-    this.speed = 1.5;
+    this.speed = INITIAL_GAME_SPEED;
     this.counted = false;
     this.id = id;
   }

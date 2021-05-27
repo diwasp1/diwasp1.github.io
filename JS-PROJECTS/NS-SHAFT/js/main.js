@@ -41,19 +41,27 @@ function init() {
   platformCount = 0;
   background = new Background();
   boundries = new Boundries();
-  player = new Player(184, 200, PLAYER_WIDTH, PLAYER_HEIGHT, 0, 4, 5);
+  player = new Player(
+    INITIAL_PLAYER_POSITION_X,
+    INITIAL_PLAYER_POSITION_Y,
+    PLAYER_WIDTH,
+    PLAYER_HEIGHT,
+    INITIAL_PLAYER_FRAME_X,
+    INITIAL_PLAYER_FRAME_Y,
+    PLAYER_MOVE_SPEED
+  );
   collide = false;
   checkGameOver = false;
   frame = 0;
-  life = 10;
+  life = INITIAL_LIFE;
   gameScore = 0;
   lastCollisionFrame = 0;
   highScore = localStorage.getItem("nsshaft-highscore")
     ? localStorage.getItem("nsshaft-highscore")
     : 0;
   newHighScore = 0;
-  gameSpeed = 1.5;
-  platformFrame = 70;
+  gameSpeed = INITIAL_GAME_SPEED;
+  platformFrame = INITIAL_PLATFORM_FRAME_RATE;
 
   // KEYS CONTROLS
   addEventListener("keydown", (e) => {
@@ -103,10 +111,10 @@ function generatePlatforms() {
         "./assets/images/shaft.png",
         x,
         y,
-        95,
-        16,
-        0,
-        0,
+        SHAFT_WIDTH,
+        SHAFT_HEIGHT,
+        PLATFORM_FRAME_X,
+        PLATFORM_FRAME_Y,
         platformCount
       );
     } else if (random < 50) {
@@ -115,10 +123,10 @@ function generatePlatforms() {
         "./assets/images/spiking.png",
         x,
         y,
-        96,
-        31,
-        0,
-        0,
+        SPIKE_WIDTH,
+        SPIKE_HEIGHT,
+        PLATFORM_FRAME_X,
+        PLATFORM_FRAME_Y,
         platformCount
       );
     } else if (random < 60) {
@@ -127,10 +135,10 @@ function generatePlatforms() {
         "./assets/images/conveyor_left.png",
         x,
         y,
-        96,
-        16,
-        0,
-        0,
+        CONVEYOR_WIDTH,
+        CONVEYOR_HEIGHT,
+        PLATFORM_FRAME_X,
+        PLATFORM_FRAME_Y,
         platformCount
       );
     } else if (random < 70) {
@@ -139,10 +147,10 @@ function generatePlatforms() {
         "./assets/images/conveyor_right.png",
         x,
         y,
-        96,
-        16,
-        0,
-        0,
+        CONVEYOR_WIDTH,
+        CONVEYOR_HEIGHT,
+        PLATFORM_FRAME_X,
+        PLATFORM_FRAME_Y,
         platformCount
       );
     } else if (random < 80) {
@@ -151,10 +159,10 @@ function generatePlatforms() {
         "./assets/images/trampoline.png",
         x,
         y,
-        97,
-        22,
-        0,
-        4,
+        TRAMPOLINE_WIDTH,
+        TRAMPOLINE_HEIGHT,
+        PLATFORM_FRAME_X,
+        TRAMPOLINE_FRAME_Y,
         platformCount
       );
     } else {
@@ -163,10 +171,10 @@ function generatePlatforms() {
         "./assets/images/fake.png",
         x,
         y,
-        97,
-        36,
-        0,
-        0,
+        FAKE_WIDTH,
+        FAKE_HEIGHT,
+        PLATFORM_FRAME_X,
+        PLATFORM_FRAME_Y,
         platformCount
       );
     }
@@ -186,7 +194,7 @@ function generatePlatforms() {
 function checkCollision() {
   for (var i = 0; i < platforms.length; i++) {
     if (
-      player.x + 2 < platforms[i].x + platforms[i].width &&
+      player.x < platforms[i].x + platforms[i].width &&
       player.x + player.width > platforms[i].x &&
       player.y < platforms[i].y &&
       player.y + player.height > platforms[i].y
@@ -195,10 +203,7 @@ function checkCollision() {
         if (sound) {
           hitSound.play();
         }
-
-        // console.log("collision");
       }
-      // console.log("collide");
       lastCollisionFrame = frame;
       if (platforms[i].type == "fake") {
         collide = false;
@@ -228,7 +233,6 @@ function checkCollision() {
       platformEffect(platforms[i]);
     } else {
       if (frame > lastCollisionFrame + 1) {
-        // console.log("notcollide");
         collide = false;
         spike = false;
       }
@@ -241,23 +245,23 @@ function checkCollision() {
 // PLATFORM EFFECTS
 function platformAnimate(platform) {
   if (platform.type == "conveyorLeft" || platform.type == "conveyorRight") {
-    if (frame % 10 === 0) {
-      if (platform.frameY >= 3) {
-        platform.frameY = 0;
+    if (frame % SPRITE_FRAME_RATE === 0) {
+      if (platform.frameY >= MAX_CONVEYOR_SPRITE_FRAME) {
+        platform.frameY = INITIAL_SPRITE_FRAME;
       } else {
         platform.frameY++;
       }
     }
   } else if (platform.type == "trampoline" && trampoline) {
-    if (platform.frameY >= 4) {
-      platform.frameY = 0;
+    if (platform.frameY >= MAX_TRAMPOLINE_SPRITE_FRAME) {
+      platform.frameY = INITIAL_SPRITE_FRAME;
     } else {
       platform.frameY++;
     }
     trampoline = false;
   } else if (platform.type == "fake" && fake) {
-    if (platform.frameY >= 5) {
-      platform.frameY = 0;
+    if (platform.frameY >= MAX_FAKE_SPRITE_FRAME) {
+      platform.frameY = INITIAL_SPRITE_FRAME;
     } else {
       platform.frameY++;
     }
@@ -268,18 +272,14 @@ function platformAnimate(platform) {
 function platformEffect(platform) {
   if (platform.type == "conveyorRight") {
     if (player.x < canvas.width - player.width - WALL_WIDTH) {
-      player.x += 2;
+      player.x += CONVEYOR_EFFECT;
     }
   } else if (platform.type == "conveyorLeft") {
     if (player.x > WALL_WIDTH) {
-      player.x -= 2;
+      player.x -= CONVEYOR_EFFECT;
     }
   } else if (platform.type == "trampoline") {
-    player.y -= 60;
-  } else if (platform.type == "spike") {
-    player.life -= 3;
-  } else if (platform.type == "shaft") {
-  } else if (platform.type == "fake") {
+    player.y -= TRAMPOLINE_EFFECT;
   }
   player.gravitySpeed = 0;
 }
@@ -300,15 +300,15 @@ function updateLife(counter) {
 }
 
 function increseLife() {
-  life += 2;
-  if (life > 10) {
-    life = 10;
+  life += INCREASE_LIFE_RATE;
+  if (life > MAX_LIFE) {
+    life = MAX_LIFE;
   }
   updateLife(life);
 }
 function decreaseLife() {
-  life -= 3;
-  if (life <= 0) {
+  life -= DECREASE_LIFE_RATE;
+  if (life <= MIN_LIFE) {
     checkGameOver = true;
   }
   updateLife(life);
@@ -443,25 +443,27 @@ function animate() {
     player.update();
     generatePlatforms();
 
-    if (frame % 120 == 0) {
+    // INCRESE SCORE
+    if (frame % SCORE_FRAME_RATE == 0) {
       gameScore++;
       updateScore();
     }
+    // INCRESE GAME SPEED
+    if (frame % GAME_SPEED_FRAME_RATE === 0 && gameSpeed < MAX_GAME_SPEED) {
+      gameSpeed += GAME_SPEED_RATE;
+      platformFrame -= PLATFORM_FRAME_RATE;
+    }
+
     checkCollision();
+
+    boundries.draw();
+
+    updateRecord();
 
     if (checkGameOver) {
       gameOver();
     }
-
-    boundries.draw();
     frame++;
-
-    updateRecord();
-
-    if (frame % 600 === 0 && gameSpeed < 3) {
-      gameSpeed += 0.2;
-      platformFrame -= 3;
-    }
   } else {
     return;
   }

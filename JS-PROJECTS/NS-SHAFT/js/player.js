@@ -17,7 +17,7 @@ class Player {
     this.left = false;
     this.right = false;
 
-    this.gravity = 0.1;
+    this.gravity = GRAVITY;
     this.gravitySpeed = 0;
     this.velocity = 0;
   }
@@ -51,7 +51,6 @@ class Player {
   }
 
   up() {
-    // this.y -= this.speed;
     if (this.y < 0) {
       collide = false;
       this.y = 0 + this.height;
@@ -60,31 +59,31 @@ class Player {
     }
   }
   animateSprite() {
-    if (frame % 10 === 0) {
+    if (frame % SPRITE_FRAME_RATE === 0) {
       if (collide === false) {
         if (this.left === true) {
-          this.frameY = 0;
+          this.frameY = PLAYER_LEFT_FRAME;
         } else if (this.right === true) {
-          this.frameY = 1;
+          this.frameY = PLAYER_RIGHT_FRAME;
         } else {
-          this.frameY = 4;
+          this.frameY = PLAYER_FALLING_FRAME;
         }
-        if (this.frameX >= 3) {
-          this.frameX = 0;
+        if (this.frameX >= MAX_SPRITE_FRAME) {
+          this.frameX = INITIAL_SPRITE_FRAME;
         } else {
           this.frameX++;
         }
       } else if (collide === true && this.left === true) {
-        this.frameY = 0;
-        if (this.frameX >= 3) {
-          this.frameX = 0;
+        this.frameY = PLAYER_LEFT_FRAME;
+        if (this.frameX >= MAX_SPRITE_FRAME) {
+          this.frameX = INITIAL_SPRITE_FRAME;
         } else {
           this.frameX++;
         }
       } else if (collide === true && this.right === true) {
-        this.frameY = 1;
-        if (this.frameX >= 3) {
-          this.frameX = 0;
+        this.frameY = PLAYER_RIGHT_FRAME;
+        if (this.frameX >= MAX_SPRITE_FRAME) {
+          this.frameX = INITIAL_SPRITE_FRAME;
         } else {
           this.frameX++;
         }
@@ -93,15 +92,15 @@ class Player {
         this.left === false &&
         this.right === false
       ) {
-        this.frameX = 8;
+        this.frameX = PLAYER_STANDING_FRAME;
         if (spike) {
-          if (this.frameY >= 1) {
-            this.frameY = 0;
+          if (this.frameY >= MAX_SPIKE_SPRITE_FRAME) {
+            this.frameY = INITIAL_SPRITE_FRAME;
           } else {
             this.frameY++;
           }
         } else {
-          this.frameY = 0;
+          this.frameY = INITIAL_SPRITE_FRAME;
         }
       }
     }
