@@ -80,6 +80,20 @@ function init() {
     backgroundSound.play();
     backgroundSound.loop = true;
   }
+
+  // GENERATE SHAFT AT FIRST LOAD
+  platform = new Platform(
+    "shaft",
+    "./assets/images/shaft.png",
+    Math.random() * 320,
+    500,
+    SHAFT_WIDTH,
+    SHAFT_HEIGHT,
+    PLATFORM_FRAME_X,
+    PLATFORM_FRAME_Y,
+    platformCount
+  );
+  platforms.push(platform);
 }
 
 // PLAYER MOVEMENT
@@ -105,7 +119,8 @@ function generatePlatforms() {
     let y = CANVAS_HEIGTH;
     let random = Math.random() * 100;
     platformCount += 1;
-    if (random < 40) {
+
+    if (random < 30) {
       platform = new Platform(
         "shaft",
         "./assets/images/shaft.png",
@@ -117,7 +132,7 @@ function generatePlatforms() {
         PLATFORM_FRAME_Y,
         platformCount
       );
-    } else if (random < 50) {
+    } else if (random < 45) {
       platform = new Platform(
         "spike",
         "./assets/images/spiking.png",
@@ -141,7 +156,7 @@ function generatePlatforms() {
         PLATFORM_FRAME_Y,
         platformCount
       );
-    } else if (random < 70) {
+    } else if (random < 75) {
       platform = new Platform(
         "conveyorRight",
         "./assets/images/conveyor_right.png",
@@ -153,7 +168,7 @@ function generatePlatforms() {
         PLATFORM_FRAME_Y,
         platformCount
       );
-    } else if (random < 80) {
+    } else if (random < 90) {
       platform = new Platform(
         "trampoline",
         "./assets/images/trampoline.png",
