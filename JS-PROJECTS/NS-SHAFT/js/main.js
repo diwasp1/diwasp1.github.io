@@ -357,7 +357,6 @@ function gameOver() {
   }
 
   cancelAnimationFrame(animationId);
-  // console.log("gameover");
 
   if (highScore < gameScore) {
     newHighScore = 1;
@@ -408,7 +407,7 @@ function gameOverBackground() {
 
   var gameOverReset = document.createElement("button");
   gameOverReset.setAttribute("id", "gameover-reset");
-  gameOverReset.innerText = "RESET";
+  gameOverReset.innerText = "HOME";
   gameOverButton.appendChild(gameOverReset);
 
   var scoreInformation = document.createElement("div");

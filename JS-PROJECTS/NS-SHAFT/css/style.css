@@ -8,9 +8,9 @@ body {
   background: url("../assets/images/background.png");
   background-repeat: repeat;
   background-size: cover;
+  font-family: "Roboto";
 }
 #game-container {
-  /* background: #0d0d0d; */
   height: 700px;
   width: 630px;
   border: 4px solid #645a5a;
@@ -18,7 +18,6 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 8px 16px;
-  /* top: 50%; */
   left: 50%;
   transform: translateX(-50%);
   background: url("../assets/images/cloud.jpg");
@@ -32,7 +31,6 @@ body {
   width: 400px;
   height: 600px;
   border: 4px solid #645a5a;
-  /* background: #0d0d0d; */
   border-radius: 10px;
   background: url("../assets/images/background.png");
 }
