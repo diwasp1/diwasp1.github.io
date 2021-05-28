@@ -39,6 +39,7 @@ hitSound.load();
 backgroundSound.load();
 dieSound.load();
 
+// GAME START BUTTON
 startButton.addEventListener("click", (e) => {
   init();
   animate();
@@ -48,6 +49,7 @@ startButton.addEventListener("click", (e) => {
   col2.style.display = "block";
 });
 
+// INSTRUCTION BUTTON
 instructionsButton.addEventListener("click", () => {
   gameInstruction.style.display = "block";
 });

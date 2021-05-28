@@ -450,7 +450,7 @@ function animate() {
   animationId = requestAnimationFrame(animate);
   if (!pause) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    background.draw();
+    background.draw(gameSpeed);
 
     player.draw();
     movePlayer();
@@ -470,7 +470,7 @@ function animate() {
 
     checkCollision();
 
-    boundries.draw();
+    boundries.draw(gameSpeed);
 
     updateRecord();
 

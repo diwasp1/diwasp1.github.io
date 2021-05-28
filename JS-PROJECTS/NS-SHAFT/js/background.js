@@ -10,10 +10,10 @@ class Background {
     this.x = 0;
     this.width = CANVAS_WIDTH;
     this.height = CANVAS_HEIGTH;
-    this.speed = 1.5;
+    this.speed = INITIAL_GAME_SPEED;
   }
 
-  draw() {
+  draw(speed) {
     if (this.y1 <= -this.height + this.speed) {
       this.y1 = this.height;
     } else {
@@ -27,6 +27,6 @@ class Background {
     ctx.drawImage(backgroundImage, this.x, this.y1, this.width, this.height);
     ctx.drawImage(backgroundImage, this.x, this.y2, this.width, this.height);
 
-    this.speed = gameSpeed;
+    this.speed = speed;
   }
 }

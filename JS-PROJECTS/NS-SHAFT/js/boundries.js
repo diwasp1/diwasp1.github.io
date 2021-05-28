@@ -19,7 +19,7 @@ class Boundries {
     this.speed = INITIAL_GAME_SPEED;
   }
 
-  draw() {
+  draw(speed) {
     ctx.drawImage(ceiling, 0, 0, CANVAS_WIDTH, CEILING_HEIGHT);
 
     if (this.y1 <= -this.height + this.speed) {
@@ -39,6 +39,6 @@ class Boundries {
     ctx.drawImage(rightWall, this.x2, this.y1, this.width, this.height);
     ctx.drawImage(rightWall, this.x2, this.y2, this.width, this.height);
 
-    this.speed = gameSpeed;
+    this.speed = speed;
   }
 }
